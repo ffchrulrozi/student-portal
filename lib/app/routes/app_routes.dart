@@ -4,9 +4,31 @@ part of 'app_pages.dart';
 abstract class Routes {
   Routes._();
   static const HOME = _Paths.HOME;
+  static const FLASHSCREEN = _Paths.FLASHSCREEN;
+  static const ONBOARDING = _Paths.ONBOARDING;
+  static const LOGIN = _Paths.LOGIN;
+  static const DAILY_REPORT = _Paths.DAILY_REPORT;
+  static const PRESENCE = _Paths.PRESENCE;
+  static const SCHEDULE = _Paths.SCHEDULE;
+  static const TRANSCRIPT = _Paths.TRANSCRIPT;
+  static const STUDY_PLAN = _Paths.STUDY_PLAN;
+  static const OTHERS = _Paths.OTHERS;
+  static const NEWS = _Paths.NEWS;
+  static const PROFILE = _Paths.PROFILE;
 }
 
 abstract class _Paths {
   _Paths._();
   static const HOME = '/home';
+  static const FLASHSCREEN = '/flashscreen';
+  static const ONBOARDING = '/onboarding';
+  static const LOGIN = '/login';
+  static const DAILY_REPORT = '/daily-report';
+  static const PRESENCE = '/presence';
+  static const SCHEDULE = '/schedule';
+  static const TRANSCRIPT = '/transcript';
+  static const STUDY_PLAN = '/study-plan';
+  static const OTHERS = '/others';
+  static const NEWS = '/news';
+  static const PROFILE = '/profile';
 }
