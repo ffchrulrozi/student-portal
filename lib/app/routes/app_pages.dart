@@ -2,8 +2,6 @@ import 'package:get/get.dart';
 
 import '../modules/daily_report/bindings/daily_report_binding.dart';
 import '../modules/daily_report/views/daily_report_view.dart';
-import '../modules/flashscreen/bindings/flashscreen_binding.dart';
-import '../modules/flashscreen/views/flashscreen_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -15,17 +13,13 @@ import '../modules/onboarding/views/onboarding_view.dart';
 import '../modules/others/bindings/others_binding.dart';
 import '../modules/others/views/others_view.dart';
 import '../modules/presence/bindings/presence_binding.dart';
-import '../modules/presence/bindings/presence_binding.dart';
-import '../modules/presence/bindings/presence_binding.dart';
-import '../modules/presence/bindings/presence_binding.dart';
-import '../modules/presence/views/presence_view.dart';
-import '../modules/presence/views/presence_view.dart';
-import '../modules/presence/views/presence_view.dart';
 import '../modules/presence/views/presence_view.dart';
 import '../modules/profile/bindings/profile_binding.dart';
 import '../modules/profile/views/profile_view.dart';
 import '../modules/schedule/bindings/schedule_binding.dart';
 import '../modules/schedule/views/schedule_view.dart';
+import '../modules/splash/bindings/splash_binding.dart';
+import '../modules/splash/views/splash_view.dart';
 import '../modules/study_plan/bindings/study_plan_binding.dart';
 import '../modules/study_plan/views/study_plan_view.dart';
 import '../modules/transcript/bindings/transcript_binding.dart';
@@ -36,18 +30,13 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  static const INITIAL = Routes.HOME;
+  static const INITIAL = Routes.SPLASH;
 
   static final routes = [
     GetPage(
       name: _Paths.HOME,
       page: () => const HomeView(),
       binding: HomeBinding(),
-    ),
-    GetPage(
-      name: _Paths.FLASHSCREEN,
-      page: () => const FlashscreenView(),
-      binding: FlashscreenBinding(),
     ),
     GetPage(
       name: _Paths.ONBOARDING,
@@ -68,23 +57,6 @@ class AppPages {
       name: _Paths.PRESENCE,
       page: () => const PresenceView(),
       binding: PresenceBinding(),
-      children: [
-        GetPage(
-          name: _Paths.PRESENCE,
-          page: () => const PresenceView(),
-          binding: PresenceBinding(),
-        ),
-        GetPage(
-          name: _Paths.PRESENCE,
-          page: () => const PresenceView(),
-          binding: PresenceBinding(),
-        ),
-        GetPage(
-          name: _Paths.PRESENCE,
-          page: () => const PresenceView(),
-          binding: PresenceBinding(),
-        ),
-      ],
     ),
     GetPage(
       name: _Paths.SCHEDULE,
@@ -115,6 +87,11 @@ class AppPages {
       name: _Paths.PROFILE,
       page: () => const ProfileView(),
       binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: _Paths.SPLASH,
+      page: () => const SplashView(),
+      binding: SplashBinding(),
     ),
   ];
 }

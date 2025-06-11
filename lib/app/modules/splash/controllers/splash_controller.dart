@@ -1,11 +1,7 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
 import 'package:student_portal/app/routes/app_pages.dart';
 
-class LoginController extends GetxController {
-  final formKey = GlobalKey<FormBuilderState>();
-
+class SplashController extends GetxController {
   @override
   void onInit() {
     super.onInit();
@@ -14,14 +10,15 @@ class LoginController extends GetxController {
   @override
   void onReady() {
     super.onReady();
+
+    Future.delayed(
+      Duration(seconds: 2),
+      () => Get.offNamed(Routes.ONBOARDING),
+    );
   }
 
   @override
   void onClose() {
     super.onClose();
-  }
-
-  void login() {
-    Get.offNamed(Routes.HOME);
   }
 }
