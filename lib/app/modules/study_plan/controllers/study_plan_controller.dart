@@ -1,23 +1,3 @@
-import 'package:get/get.dart';
+import 'package:student_portal/app/base/base_controller.dart';
 
-class StudyPlanController extends GetxController {
-  //TODO: Implement StudyPlanController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
-}
+class StudyPlanController extends BaseController {}

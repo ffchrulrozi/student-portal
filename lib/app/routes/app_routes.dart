@@ -3,7 +3,6 @@ part of 'app_pages.dart';
 
 abstract class Routes {
   Routes._();
-  static const HOME = _Paths.HOME;
   static const ONBOARDING = _Paths.ONBOARDING;
   static const LOGIN = _Paths.LOGIN;
   static const DAILY_REPORT = _Paths.DAILY_REPORT;
@@ -15,11 +14,11 @@ abstract class Routes {
   static const NEWS = _Paths.NEWS;
   static const PROFILE = _Paths.PROFILE;
   static const SPLASH = _Paths.SPLASH;
+  static const DASHBOARD = _Paths.DASHBOARD;
 }
 
 abstract class _Paths {
   _Paths._();
-  static const HOME = '/home';
   static const ONBOARDING = '/onboarding';
   static const LOGIN = '/login';
   static const DAILY_REPORT = '/daily-report';
@@ -31,4 +30,5 @@ abstract class _Paths {
   static const NEWS = '/news';
   static const PROFILE = '/profile';
   static const SPLASH = '/splash';
+  static const DASHBOARD = '/dashboard';
 }

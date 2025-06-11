@@ -1,27 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
+import 'package:student_portal/app/base/base_controller.dart';
 import 'package:student_portal/app/routes/app_pages.dart';
 
-class LoginController extends GetxController {
+class LoginController extends BaseController {
   final formKey = GlobalKey<FormBuilderState>();
 
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
   void login() {
-    Get.offNamed(Routes.HOME);
+    Get.offNamed(Routes.DASHBOARD);
   }
 }

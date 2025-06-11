@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:student_portal/app/modules/onboarding/controllers/onboarding_controller.dart';
-import 'package:student_portal/app/utils/ext/size_ext.dart';
 import 'package:student_portal/app/utils/helper/divider_helper.dart';
 import 'package:student_portal/app/utils/helper/style_helper.dart';
 import 'package:student_portal/assets/assets.gen.dart';

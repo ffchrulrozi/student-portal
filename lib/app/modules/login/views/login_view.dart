@@ -34,7 +34,7 @@ class LoginView extends GetView<LoginController> {
                           name: "id",
                           decoration: InputDecoration(
                             hintText: "Student ID",
-                            prefixIcon: Icon(Icons.people),
+                            prefixIcon: Icon(Icons.person),
                           ),
                         ),
                         v(2),

@@ -1,11 +1,8 @@
 import 'package:get/get.dart';
+import 'package:student_portal/app/base/base_controller.dart';
 import 'package:student_portal/app/routes/app_pages.dart';
 
-class SplashController extends GetxController {
-  @override
-  void onInit() {
-    super.onInit();
-  }
+class SplashController extends BaseController {
 
   @override
   void onReady() {
@@ -17,8 +14,4 @@ class SplashController extends GetxController {
     );
   }
 
-  @override
-  void onClose() {
-    super.onClose();
-  }
 }

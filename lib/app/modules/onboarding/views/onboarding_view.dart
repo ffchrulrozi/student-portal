@@ -1,4 +1,3 @@
-import 'package:flex_color_scheme/flex_color_scheme.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -6,9 +5,6 @@ import 'package:student_portal/app/modules/onboarding/views/slide1_screen.dart';
 import 'package:student_portal/app/modules/onboarding/views/slide2_screen.dart';
 import 'package:student_portal/app/modules/onboarding/views/slide3_screen.dart';
 import 'package:student_portal/app/utils/ext/size_ext.dart';
-import 'package:student_portal/app/utils/helper/divider_helper.dart';
-import 'package:student_portal/app/utils/helper/style_helper.dart';
-import 'package:student_portal/assets/assets.gen.dart';
 
 import '../controllers/onboarding_controller.dart';
 

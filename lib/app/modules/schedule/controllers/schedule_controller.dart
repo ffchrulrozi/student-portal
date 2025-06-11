@@ -1,23 +1,4 @@
-import 'package:get/get.dart';
+import 'package:student_portal/app/base/base_controller.dart';
 
-class ScheduleController extends GetxController {
-  //TODO: Implement ScheduleController
-
-  final count = 0.obs;
-  @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
-  }
-
-  void increment() => count.value++;
+class ScheduleController extends BaseController {
 }
