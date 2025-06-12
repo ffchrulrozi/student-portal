@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:student_portal/app/utils/helper/divider_helper.dart';
@@ -20,25 +19,24 @@ class HomeFeatureWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () => Get.toNamed(route),
-      child: Container(
-        width: 125,
-        decoration: BoxDecoration(
-            color: color, borderRadius: BorderRadius.circular(10)),
-        padding: EdgeInsets.all(20),
-        child: Column(
-          children: [
-            Icon(
-              icon,
-              color: Colors.white,
-              size: 40,
+      child: Column(
+        children: [
+          Container(
+            width: 75,
+            decoration: BoxDecoration(
+                color: color, borderRadius: BorderRadius.circular(25)),
+            padding: EdgeInsets.all(20),
+            child: Center(
+              child: Icon(
+                icon,
+                color: Colors.white,
+                size: 30,
+              ),
             ),
-            v(1),
-            Text(
-              title,
-              style: TextStyle(color: Colors.white),
-            )
-          ],
-        ),
+          ),
+          v(1),
+          Text(title, style: TextStyle(fontSize: 12),)
+        ],
       ),
     );
   }

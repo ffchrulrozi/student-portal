@@ -1,7 +1,5 @@
 import 'package:get/get.dart';
 
-import '../modules/daily_report/bindings/daily_report_binding.dart';
-import '../modules/daily_report/views/daily_report_view.dart';
 import '../modules/dashboard/bindings/dashboard_binding.dart';
 import '../modules/dashboard/views/dashboard_view.dart';
 import '../modules/login/bindings/login_binding.dart';
@@ -12,6 +10,8 @@ import '../modules/others/bindings/others_binding.dart';
 import '../modules/others/views/others_view.dart';
 import '../modules/presence/bindings/presence_binding.dart';
 import '../modules/presence/views/presence_view.dart';
+import '../modules/progress/bindings/progress_binding.dart';
+import '../modules/progress/views/progress_view.dart';
 import '../modules/schedule/bindings/schedule_binding.dart';
 import '../modules/schedule/views/schedule_view.dart';
 import '../modules/splash/bindings/splash_binding.dart';
@@ -38,11 +38,6 @@ class AppPages {
       name: _Paths.LOGIN,
       page: () => const LoginView(),
       binding: LoginBinding(),
-    ),
-    GetPage(
-      name: _Paths.DAILY_REPORT,
-      page: () => const DailyReportView(),
-      binding: DailyReportBinding(),
     ),
     GetPage(
       name: _Paths.PRESENCE,
@@ -78,6 +73,11 @@ class AppPages {
       name: _Paths.DASHBOARD,
       page: () => const DashboardView(),
       binding: DashboardBinding(),
+    ),
+    GetPage(
+      name: _Paths.PROGRESS,
+      page: () => const ProgressView(),
+      binding: ProgressBinding(),
     ),
   ];
 }

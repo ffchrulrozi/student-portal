@@ -5,7 +5,6 @@ import 'package:student_portal/app/modules/dashboard/controllers/dashboard_contr
 import 'package:student_portal/app/modules/dashboard/views/home_view.dart';
 import 'package:student_portal/app/modules/dashboard/views/news_view.dart';
 import 'package:student_portal/app/modules/dashboard/views/profile_view.dart';
-import 'package:student_portal/app/utils/helper/divider_helper.dart';
 
 class DashboardView extends StatelessWidget {
   const DashboardView({super.key});
@@ -13,30 +12,13 @@ class DashboardView extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetBuilder<DashboardController>(builder: (controller) {
       return Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Hi, Fachrul',
-            style: TextStyle(color: Colors.white),
-          ),
-          actions: [
-            Icon(
-              Icons.notifications,
-              color: Colors.white,
-            ),
-            h(2),
+        body: IndexedStack(
+          index: controller.screenIndex,
+          children: [
+            HomeView(controller),
+            NewsView(),
+            ProfileView(),
           ],
-          backgroundColor: Colors.blue,
-        ),
-        body: Padding(
-          padding: EdgeInsets.all(25),
-          child: IndexedStack(
-            index: controller.screenIndex,
-            children: [
-              HomeView(controller),
-              NewsView(),
-              ProfileView(),
-            ],
-          ),
         ),
         bottomNavigationBar: BottomNavigationBar(
             currentIndex: controller.screenIndex,

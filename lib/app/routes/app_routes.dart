@@ -5,7 +5,6 @@ abstract class Routes {
   Routes._();
   static const ONBOARDING = _Paths.ONBOARDING;
   static const LOGIN = _Paths.LOGIN;
-  static const DAILY_REPORT = _Paths.DAILY_REPORT;
   static const PRESENCE = _Paths.PRESENCE;
   static const SCHEDULE = _Paths.SCHEDULE;
   static const TRANSCRIPT = _Paths.TRANSCRIPT;
@@ -15,13 +14,13 @@ abstract class Routes {
   static const PROFILE = _Paths.PROFILE;
   static const SPLASH = _Paths.SPLASH;
   static const DASHBOARD = _Paths.DASHBOARD;
+  static const PROGRESS = _Paths.PROGRESS;
 }
 
 abstract class _Paths {
   _Paths._();
   static const ONBOARDING = '/onboarding';
   static const LOGIN = '/login';
-  static const DAILY_REPORT = '/daily-report';
   static const PRESENCE = '/presence';
   static const SCHEDULE = '/schedule';
   static const TRANSCRIPT = '/transcript';
@@ -31,4 +30,5 @@ abstract class _Paths {
   static const PROFILE = '/profile';
   static const SPLASH = '/splash';
   static const DASHBOARD = '/dashboard';
+  static const PROGRESS = '/progress';
 }
