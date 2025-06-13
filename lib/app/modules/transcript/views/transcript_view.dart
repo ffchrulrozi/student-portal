@@ -4,8 +4,9 @@ import 'package:get/get.dart';
 import 'package:student_portal/app/modules/transcript/controllers/transcript_controller.dart';
 import 'package:student_portal/app/utils/ext/size_ext.dart';
 import 'package:student_portal/app/utils/helper/divider_helper.dart';
-import 'package:student_portal/app/utils/helper/style_helper.dart';
+import 'package:student_portal/app/widgets/summary_widget.dart';
 import 'package:student_portal/assets/assets.gen.dart';
+import 'package:student_portal/app/widgets/table_cell_widget.dart';
 
 class TranscriptView extends GetView<TranscriptController> {
   const TranscriptView({super.key});
@@ -47,11 +48,11 @@ class TranscriptView extends GetView<TranscriptController> {
                             columnWidths: {0: FixedColumnWidth(200)},
                             children: [
                               TableRow(children: [
-                                TableCell("Subject",
+                                TableCellWidget("Subject",
                                     isHeader: true, isLeft: true),
-                                TableCell("SKS", isHeader: true),
-                                TableCell("Score", isHeader: true),
-                                TableCell("Grade", isHeader: true),
+                                TableCellWidget("SKS", isHeader: true),
+                                TableCellWidget("Score", isHeader: true),
+                                TableCellWidget("Grade", isHeader: true),
                               ]),
                               ...semester.transcripts!.map((transcript) {
                                 final bool isWarning =
@@ -69,18 +70,22 @@ class TranscriptView extends GetView<TranscriptController> {
                                               : null,
                                     ),
                                     children: [
-                                      TableCell(transcript.subject,
+                                      TableCellWidget(transcript.subject,
                                           isLeft: true),
-                                      TableCell(transcript.credit),
-                                      TableCell(transcript.score),
-                                      TableCell(transcript.grade),
+                                      TableCellWidget(transcript.credit),
+                                      TableCellWidget(transcript.score),
+                                      TableCellWidget(transcript.grade),
                                     ]);
                               }),
                               TableRow(children: [
-                                TableCell("", isHeader: true, isLeft: true),
-                                TableCell(semester.totalCredit, isHeader: true),
-                                TableCell(semester.avgScore, isHeader: true),
-                                TableCell(semester.avgGrade, isHeader: true),
+                                TableCellWidget("",
+                                    isHeader: true, isLeft: true),
+                                TableCellWidget(semester.totalCredit,
+                                    isHeader: true),
+                                TableCellWidget(semester.avgScore,
+                                    isHeader: true),
+                                TableCellWidget(semester.avgGrade,
+                                    isHeader: true),
                               ])
                             ],
                           ),
@@ -101,52 +106,6 @@ class TranscriptView extends GetView<TranscriptController> {
               ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class TableCell extends StatelessWidget {
-  const TableCell(this.value, {this.isHeader, this.isLeft, super.key});
-  final dynamic value;
-  final bool? isHeader;
-  final bool? isLeft;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(5),
-      child: Text(
-        value?.toString() ?? "",
-        textAlign: isLeft == true ? TextAlign.left : TextAlign.center,
-        style: TextStyle(
-          fontWeight: isHeader == true ? FontWeight.bold : FontWeight.normal,
-        ),
-      ),
-    );
-  }
-}
-
-class SummaryWidget extends StatelessWidget {
-  const SummaryWidget(this.label, this.value, {super.key});
-  final String label;
-  final dynamic value;
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      child: Container(
-        padding: EdgeInsets.all(10),
-        decoration: BoxDecoration(border: Border.all()),
-        child: Column(
-          children: [
-            Text(
-              value?.toString() ?? "",
-              style: text(context).headlineLarge,
-            ),
-            Text(label),
-          ],
         ),
       ),
     );
