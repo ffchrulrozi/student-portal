@@ -12,7 +12,7 @@ class ScoreWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Get.offNamed(Routes.TRANSCRIPT),
+      onTap: () => Get.toNamed(Routes.TRANSCRIPT),
       child: Card(
         color: Colors.white,
         elevation: 5,
@@ -31,7 +31,7 @@ class ScoreWidget extends StatelessWidget {
                   ),
                   h(1),
                   Text(
-                    "Transcripts",
+                    "Scores",
                     style: text(context).bodyMedium!.copyWith(
                         fontWeight: FontWeight.bold, color: Colors.blue),
                     textAlign: TextAlign.center,

@@ -26,6 +26,9 @@ class $LibAssetsGen {
 class $LibAssetsImgGen {
   const $LibAssetsImgGen();
 
+  /// File path: lib/assets/img/logo.png
+  AssetGenImage get logo => const AssetGenImage('lib/assets/img/logo.png');
+
   /// File path: lib/assets/img/me.png
   AssetGenImage get me => const AssetGenImage('lib/assets/img/me.png');
 
@@ -58,6 +61,7 @@ class $LibAssetsImgGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [
+    logo,
     me,
     news1,
     news2,
