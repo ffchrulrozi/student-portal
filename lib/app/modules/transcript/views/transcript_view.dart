@@ -13,13 +13,8 @@ class TranscriptView extends GetView<TranscriptController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Transcripts'),
-        backgroundColor: Colors.blue,
-        foregroundColor: Colors.white,
-      ),
+      appBar: AppBar(title: const Text('Transcripts')),
       body: SingleChildScrollView(
-        scrollDirection: Axis.vertical,
         child: Container(
           padding: EdgeInsets.only(top: 20, left: 20, right: 20, bottom: 50),
           child: Column(
