@@ -39,6 +39,7 @@ dependencies:
   flutter_form_builder: ^9.7.0
   fl_chart: ^1.0.0
   percent_indicator: ^4.2.5
+  collection: ^1.19.0
 
 dev_dependencies:
   flutter_test:

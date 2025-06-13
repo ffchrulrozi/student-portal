@@ -11,7 +11,7 @@ class ScheduleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () => Get.offNamed(Routes.SCHEDULE),
+      onTap: () => Get.toNamed(Routes.SCHEDULE),
       child: Container(
         height: 190,
         decoration: BoxDecoration(
