@@ -10,8 +10,6 @@ abstract class Routes {
   static const TRANSCRIPT = _Paths.TRANSCRIPT;
   static const STUDY_PLAN = _Paths.STUDY_PLAN;
   static const OTHERS = _Paths.OTHERS;
-  static const NEWS = _Paths.NEWS;
-  static const PROFILE = _Paths.PROFILE;
   static const SPLASH = _Paths.SPLASH;
   static const DASHBOARD = _Paths.DASHBOARD;
   static const PROGRESS = _Paths.PROGRESS;
@@ -26,8 +24,6 @@ abstract class _Paths {
   static const TRANSCRIPT = '/transcript';
   static const STUDY_PLAN = '/study-plan';
   static const OTHERS = '/others';
-  static const NEWS = '/news';
-  static const PROFILE = '/profile';
   static const SPLASH = '/splash';
   static const DASHBOARD = '/dashboard';
   static const PROGRESS = '/progress';

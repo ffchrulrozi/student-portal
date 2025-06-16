@@ -103,10 +103,10 @@ class ScoreBarWidget extends StatelessWidget {
             BarChartRodData(toY: 4, color: Colors.red, width: 16),
           ]),
           BarChartGroupData(x: 5, barRods: [
-            BarChartRodData(toY: 3.8, color: Colors.red, width: 16),
+            BarChartRodData(toY: 3.8, color: Colors.teal, width: 16),
           ]),
           BarChartGroupData(x: 6, barRods: [
-            BarChartRodData(toY: 3.3, color: Colors.red, width: 16),
+            BarChartRodData(toY: 3.3, color: Colors.purple, width: 16),
           ]),
         ],
       ),

@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:student_portal/app/modules/dashboard/controllers/dashboard_controller.dart';
-import 'package:student_portal/app/modules/dashboard/views/home_view.dart';
-import 'package:student_portal/app/modules/dashboard/views/news_view.dart';
-import 'package:student_portal/app/modules/dashboard/views/profile_view.dart';
+import 'package:student_portal/app/modules/home/views/home_view.dart';
+import 'package:student_portal/app/modules/news/views/news_view.dart';
+import 'package:student_portal/app/modules/profile/views/profile_view.dart';
 
 class DashboardView extends StatelessWidget {
   const DashboardView({super.key});
@@ -15,7 +15,7 @@ class DashboardView extends StatelessWidget {
         body: IndexedStack(
           index: controller.screenIndex,
           children: [
-            HomeView(controller),
+            HomeView(),
             NewsView(),
             ProfileView(),
           ],

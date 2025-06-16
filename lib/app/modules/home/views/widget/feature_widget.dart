@@ -35,7 +35,10 @@ class HomeFeatureWidget extends StatelessWidget {
             ),
           ),
           v(1),
-          Text(title, style: TextStyle(fontSize: 12),)
+          Text(
+            title,
+            style: TextStyle(fontSize: 12),
+          )
         ],
       ),
     );

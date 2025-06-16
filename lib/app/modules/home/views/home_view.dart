@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:student_portal/app/modules/dashboard/controllers/dashboard_controller.dart';
-import 'package:student_portal/app/modules/dashboard/views/home_widget/feature_widget.dart';
-import 'package:student_portal/app/modules/dashboard/views/home_widget/schedule_widget.dart';
-import 'package:student_portal/app/modules/dashboard/views/home_widget/profile_widget.dart';
-import 'package:student_portal/app/modules/dashboard/views/home_widget/score_widget.dart';
-import 'package:student_portal/app/modules/dashboard/views/home_widget/sks_widget.dart';
+
+import 'package:get/get.dart';
+import 'package:student_portal/app/modules/home/views/widget/profile_widget.dart';
+import 'package:student_portal/app/modules/home/views/widget/schedule_widget.dart';
+import 'package:student_portal/app/modules/home/views/widget/score_widget.dart';
+import 'package:student_portal/app/modules/home/views/widget/sks_widget.dart';
 import 'package:student_portal/app/routes/app_pages.dart';
 import 'package:student_portal/app/utils/helper/divider_helper.dart';
 
-class HomeView extends StatelessWidget {
-  const HomeView(this.controller, {super.key});
-  final DashboardController controller;
+import '../controllers/home_controller.dart';
+import 'widget/feature_widget.dart';
 
+class HomeView extends GetView<HomeController> {
+  const HomeView({super.key});
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
