@@ -17,8 +17,8 @@ class NewsController extends BaseController {
       fromJson: (data) => News.fromJson(data),
     );
 
-    _isLastData = (response.data?.length ?? 0) < 5;
+    _isLastData = (response.data?.data?.length ?? 0) < 5;
 
-    return response.data!;
+    return response.data!.data!;
   }
 }

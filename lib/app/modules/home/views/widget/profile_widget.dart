@@ -27,7 +27,7 @@ class ProfileWidget extends StatelessWidget {
               Text("Catti Ningrum",
                   style:
                       text(context).titleLarge!.copyWith(color: Colors.white, fontWeight: FontWeight.bold)),
-              Text("NIM. 7845112",
+              Text("ID. 7845112",
                   style:
                       text(context).titleSmall!.copyWith(color: Colors.white)),
               v(1),

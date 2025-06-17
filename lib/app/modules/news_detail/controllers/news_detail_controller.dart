@@ -19,7 +19,7 @@ class NewsDetailController extends BaseController {
         endPoint: "/studentportal-news/$id",
         fromJson: (data) => NewsDetail.fromJson(data));
 
-    newsDetail = response;
+    newsDetail = response.data!;
     update();
   }
 }

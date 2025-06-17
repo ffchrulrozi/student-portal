@@ -44,6 +44,7 @@ dependencies:
   infinite_scroll_pagination: ^5.0.0
   flutter_dotenv: ^5.2.1
   flutter_html: ^3.0.0
+  form_builder_validators: ^11.1.2
 
 dev_dependencies:
   flutter_test:
