@@ -5,7 +5,7 @@ class ApiService {
   final Dio _dio = Dio();
   final String _baseApiUrl = dotenv.env["BASE_API_URL"]!;
 
-  Future<T> list<T>({
+  Future<T> get<T>({
     required String endPoint,
     Map<String, dynamic>? params,
     required T Function(Map<String, dynamic>) fromJson,

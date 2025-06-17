@@ -13,6 +13,7 @@ abstract class Routes {
   static const SPLASH = _Paths.SPLASH;
   static const DASHBOARD = _Paths.DASHBOARD;
   static const PROGRESS = _Paths.PROGRESS;
+  static const NEWS_DETAIL = _Paths.NEWS_DETAIL;
 }
 
 abstract class _Paths {
@@ -27,4 +28,5 @@ abstract class _Paths {
   static const SPLASH = '/splash';
   static const DASHBOARD = '/dashboard';
   static const PROGRESS = '/progress';
+  static const NEWS_DETAIL = '/news-detail';
 }

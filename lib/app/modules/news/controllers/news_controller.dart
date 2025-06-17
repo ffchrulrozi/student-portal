@@ -11,7 +11,7 @@ class NewsController extends BaseController {
       fetchPage: (pageKey) => getData(pageKey));
 
   Future<List<Datum>> getData(int pageKey) async {
-    var response = await apiSvc.list<News>(
+    var response = await apiSvc.get<News>(
       endPoint: '/studentportal-news',
       params: {"page": pageKey},
       fromJson: (data) => News.fromJson(data),
