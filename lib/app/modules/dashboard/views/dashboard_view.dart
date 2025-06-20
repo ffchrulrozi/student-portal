@@ -5,7 +5,6 @@ import 'package:student_portal/app/modules/dashboard/controllers/dashboard_contr
 import 'package:student_portal/app/modules/home/views/home_view.dart';
 import 'package:student_portal/app/modules/news/views/news_view.dart';
 import 'package:student_portal/app/modules/profile/views/profile_view.dart';
-
 class DashboardView extends StatelessWidget {
   const DashboardView({super.key});
   @override

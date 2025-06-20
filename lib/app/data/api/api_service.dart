@@ -2,14 +2,15 @@ import 'package:dio/dio.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:student_portal/app/services/secure_storage_service.dart';
 
 class ApiService {
   final Dio _dio = Dio();
   final String _baseApiUrl = dotenv.env["BASE_API_URL"]!;
 
-  Options _buildOptions({Map<String, dynamic>? files}) {
+  Future<Options> _buildOptions({Map<String, dynamic>? files}) async {
     return Options(headers: {
-      "Authorization": "a101",
+      "Authorization": await SecureStorageService.getToken(),
       "Content-Type": files == null ? "application/json" : "multipart/form-data"
     });
   }
@@ -40,7 +41,7 @@ class ApiService {
       final response = await _dio.get(
         _baseApiUrl + endPoint,
         queryParameters: params,
-        options: _buildOptions(),
+        options: await _buildOptions(),
       );
       return ApiResult(
         statusCode: response.statusCode,
@@ -77,7 +78,7 @@ class ApiService {
       final response = await _dio.post(
         _baseApiUrl + endPoint,
         data: body,
-        options: _buildOptions(files: files),
+        options: await _buildOptions(files: files),
       );
       return ApiResult(
         statusCode: response.statusCode,

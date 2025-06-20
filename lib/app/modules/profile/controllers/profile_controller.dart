@@ -7,6 +7,8 @@ import 'package:student_portal/app/data/api/models/province.dart' as province;
 import 'package:student_portal/app/data/api/models/city.dart' as city;
 import 'package:student_portal/app/modules/profile/models/profile.dart';
 import 'package:student_portal/app/modules/profile/models/profile_update_response.dart';
+import 'package:student_portal/app/routes/app_pages.dart';
+import 'package:student_portal/app/services/secure_storage_service.dart';
 
 class ProfileController extends BaseController {
   final key = GlobalKey<FormBuilderState>();
@@ -111,5 +113,10 @@ class ProfileController extends BaseController {
         Get.snackbar("Error", response.message ?? "");
       }
     }
+  }
+
+  void logout() async {
+    await SecureStorageService.deleteToken();
+    Get.offAllNamed(Routes.LOGIN);
   }
 }

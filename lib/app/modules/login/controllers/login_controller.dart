@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 import 'package:student_portal/app/base/base_controller.dart';
+import 'package:student_portal/app/services/secure_storage_service.dart';
 import 'package:student_portal/app/modules/login/models/login.dart';
 import 'package:student_portal/app/routes/app_pages.dart';
 
 class LoginController extends BaseController {
+  final secureStorage = FlutterSecureStorage();
   final formKey = GlobalKey<FormBuilderState>();
   var isPasswordObscure = true.obs;
   var isLoading = false;
+
+  @override
+  void onInit() async {
+    super.onInit();
+    if (await SecureStorageService.getToken() != null) {
+      Get.offAllNamed(Routes.DASHBOARD);
+    }
+  }
 
   void login() async {
     final form = formKey.currentState;
@@ -26,6 +37,8 @@ class LoginController extends BaseController {
       );
 
       if (response.statusCode == 200) {
+        await SecureStorageService.setToken(response.data!.token!);
+
         Get.offAllNamed(Routes.DASHBOARD);
       } else if (response.statusCode == 404) {
         Get.snackbar("Login failed", "User ID or Password is incorrect.",

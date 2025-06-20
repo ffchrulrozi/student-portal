@@ -4,6 +4,7 @@ import 'package:form_builder_validators/form_builder_validators.dart';
 
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:student_portal/app/modules/profile/views/widgets/navbar_popup_menu_widget.dart';
 
 import '../controllers/profile_controller.dart';
 
@@ -15,6 +16,7 @@ class ProfileView extends StatelessWidget {
       return Scaffold(
         appBar: AppBar(
           title: const Text('Profile'),
+          actions: [NavbarPopupMenuWidget(controller)],
         ),
         body: controller.isGetDataLoading
             ? Center(child: CircularProgressIndicator())
