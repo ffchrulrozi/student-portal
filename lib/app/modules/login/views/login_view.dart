@@ -91,7 +91,7 @@ class LoginView extends StatelessWidget {
               AbsorbPointer(
                 absorbing: true,
                 child: Container(
-                  color: Color.fromARGB(150, 0, 0, 0),
+                  color: Color.fromARGB(100, 0, 0, 0),
                   child: Center(
                     child: CircularProgressIndicator(),
                   ),

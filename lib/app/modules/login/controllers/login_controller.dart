@@ -11,17 +11,17 @@ class LoginController extends BaseController {
   var isLoading = false;
 
   void login() async {
-    if (formKey.currentState != null &&
-        formKey.currentState!.saveAndValidate()) {
+    final form = formKey.currentState;
+    if (form != null && form.saveAndValidate()) {
       isLoading = true;
       update();
 
-      final String studentId = formKey.currentState?.value["student_id"];
-      final String password = formKey.currentState?.value["password"];
+      final String studentId = form.value["student_id"];
+      final String password = form.value["password"];
 
       var response = await apiSvc.post(
         endPoint: "/studentportal-login",
-        body: {"student_id": studentId, "password": password},
+        data: {"student_id": studentId, "password": password},
         fromJson: (data) => Login.fromJson(data),
       );
 
