@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:student_portal/app/modules/home/controllers/home_controller.dart';
+import 'package:student_portal/app/utils/ext/img_ext.dart';
 import 'package:student_portal/app/utils/helper/divider_helper.dart';
 import 'package:student_portal/app/utils/helper/style_helper.dart';
-import 'package:student_portal/assets/assets.gen.dart';
-
 class ProfileWidget extends StatelessWidget {
-  const ProfileWidget({super.key});
+  const ProfileWidget(this.controller, {super.key});
+  final HomeController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +14,8 @@ class ProfileWidget extends StatelessWidget {
       child: Row(
         children: [
           ClipOval(
-            child: Image.asset(
-              Assets.lib.assets.img.me.path,
+            child: Image.network(
+              controller.profile.photo?.imgFromNetwork() ?? "",
               width: 100,
               height: 100,
               fit: BoxFit.cover,
@@ -24,15 +25,15 @@ class ProfileWidget extends StatelessWidget {
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("Catti Ningrum",
-                  style:
-                      text(context).titleLarge!.copyWith(color: Colors.white, fontWeight: FontWeight.bold)),
-              Text("ID. 7845112",
+              Text(controller.profile.name ?? "",
+                  style: text(context).titleLarge!.copyWith(
+                      color: Colors.white, fontWeight: FontWeight.bold)),
+              Text("ID. ${controller.profile.studentId ?? ""}",
                   style:
                       text(context).titleSmall!.copyWith(color: Colors.white)),
               v(1),
               Text(
-                "INFORMATIC ENGINEERING",
+                controller.profile.major ?? "",
                 style: text(context).titleSmall!.copyWith(color: Colors.white),
               )
             ],

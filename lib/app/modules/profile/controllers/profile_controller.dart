@@ -5,11 +5,15 @@ import 'package:image_picker/image_picker.dart';
 import 'package:student_portal/app/base/base_controller.dart';
 import 'package:student_portal/app/data/api/models/province.dart' as province;
 import 'package:student_portal/app/data/api/models/city.dart' as city;
+import 'package:student_portal/app/modules/profile/models/profile.dart';
 import 'package:student_portal/app/modules/profile/models/profile_update_response.dart';
 
 class ProfileController extends BaseController {
   final key = GlobalKey<FormBuilderState>();
-  final isLoading = false;
+  var profile = Profile();
+  var provinces = <province.Datum>[];
+  var cities = <city.Datum>[];
+  var isGetDataLoading = true;
   final religions = [
     "Islam",
     "Katolik",
@@ -18,28 +22,49 @@ class ProfileController extends BaseController {
     "Buddha",
     "Konghuchu"
   ];
-  var provinces = <province.Datum>[];
-  var cities = <city.Datum>[];
   final ImagePicker _picker = ImagePicker();
   XFile? _image;
 
   @override
   void onInit() {
     super.onInit();
-    getProvinces();
+    getData();
   }
 
-  Future<void> getProvinces() async {
-    var response = await apiSvc.get(
-      endPoint: '/master-province',
-      fromJson: (data) => province.Province.fromJson(data),
-    );
+  void getData() {
+    apiSvc
+        .get(
+            endPoint: "/studentportal-profile",
+            fromJson: (data) => Profile.fromJson(data))
+        .then((profileResponse) {
+      profile = profileResponse.data!;
+      isGetDataLoading = false;
+      update();
 
-    provinces = response.data!.data!;
-    update();
+      apiSvc
+          .get(
+              endPoint: '/master-province',
+              fromJson: (data) => province.Province.fromJson(data))
+          .then((provinceResponse) {
+        provinces = provinceResponse.data!.data!;
+        int provinceId =
+            provinces.where((x) => x.name == profile.province).first.id!;
+
+        apiSvc
+            .get(
+                endPoint: '/master-city',
+                params: {"province_id": provinceId},
+                fromJson: (data) => city.City.fromJson(data))
+            .then((cityResponse) {
+          cities = cityResponse.data!.data!;
+
+          update();
+        });
+      });
+    });
   }
 
-  Future<void> getCities(int? provinceId) async {
+  void getCities(int? provinceId) async {
     if (provinceId != null) {
       var response = await apiSvc.get(
         endPoint: '/master-city',
