@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:infinite_scroll_pagination/infinite_scroll_pagination.dart';
+import 'package:intl/intl.dart';
 import 'package:student_portal/app/modules/news/controllers/news_controller.dart';
 import 'package:student_portal/app/modules/news/models/news.dart';
 import 'package:student_portal/app/routes/app_pages.dart';
@@ -51,7 +52,12 @@ class NewsView extends StatelessWidget {
                                   v(0.5),
                                   Text(item.summary ?? ""),
                                   v(0.5),
-                                  Text(item.updatedAt ?? ""),
+                                  Text(
+                                    item.updatedAt != null
+                                        ? DateFormat("dd-MM-yyyy hh:ii").format(
+                                            DateTime.parse(item.updatedAt!))
+                                        : '',
+                                  ),
                                 ],
                               ),
                             )
