@@ -39,51 +39,51 @@
   <li>
     <b>Splash</b>
     <p>Show splash screen for 2 seconds, then go to onboarding page.</p>
-    <img src="./git-img/1-splash.png" style="height:200px; width: 90px; object-fit:cover" />
+    <img src="./git-img/1-splash.png" style="height:200px; width: 115px; object-fit:cover" />
   </li>
   <li>
     <b>Onboarding</b>
     <p>There are 3 onboarding pages here, these app used for introduce app at glance for user.<br />After these pages, app will redirect to login page.</p>
-    <img src="./git-img/2-onboarding.png" style="height:200px; width: 90px; object-fit:cover" />
+    <img src="./git-img/2-onboarding.png" style="height:200px; width: 115px; object-fit:cover" />
   </li>
   <li>
     <b>Login</b>
     <p>Check first if user token exist then auto redirect to dashboard page.<br />If not yet, show login page and integrate to API to check is username/password valid or not.</p>
-    <img src="./git-img/3-login.png" style="height:200px; width: 90px; object-fit:cover" />
+    <img src="./git-img/3-login.png" style="height:200px; width: 115px; object-fit:cover" />
   </li>
   <li>
     <b>Dashboard</b>
     <p>There are 3 main features here: home, news, and profile.<br />User can go to each page using bottom navigation.</p>
-    <img src="./git-img/4-dashboard.png" style="height:200px; width: 90px; object-fit:cover" />
+    <img src="./git-img/4-dashboard.png" style="height:200px; width: 115px; object-fit:cover" />
   </li>
   <li>
     <b>Schedule</b>
     <p>Show schedules of each days and their details.</p>
-    <img src="./git-img/5-schedule.png" style="height:200px; width: 90px; object-fit:cover" />
+    <img src="./git-img/5-schedule.png" style="height:200px; width: 115px; object-fit:cover" />
   </li>
   <li>
     <b>Transcript</b>
     <p>Show transcript report of previous semester.</p>
-    <img src="./git-img/6-transcript.png" style="height:200px; width: 90px; object-fit:cover" />
+    <img src="./git-img/6-transcript.png" style="height:200px; width: 115px; object-fit:cover" />
   </li>
   <li>
     <b>Progress</b>
     <p>Show progress report of this semester.<br />See attendance, scores (home work, mid/end test, etc), up to estimating final score.</p>
-    <img src="./git-img/7-progress.png" style="height:200px; width: 90px; object-fit:cover" />
+    <img src="./git-img/7-progress.png" style="height:200px; width: 115px; object-fit:cover" />
   </li>
   <li>
     <b>News</b>
     <p>Show latest news.<br />This feature use infinite-scroll-pagination, so user can go to next page just scroll down it.</p>
-    <img src="./git-img/8-news.png" style="height:200px; width: 90px; object-fit:cover" />
+    <img src="./git-img/8-news.png" style="height:200px; width: 115px; object-fit:cover" />
   </li>
   <li>
     <b>News Detail</b>
     <p>Read news detail.</p>
-    <img src="./git-img/9-news-detail.png" style="height:200px; width: 90px; object-fit:cover" />
+    <img src="./git-img/9-news-detail.png" style="height:200px; width: 115px; object-fit:cover" />
   </li>
   <li>
     <b>Profile</b>
     <p>Show profile and update it if user want.<br />There are several inputs like text input, dropdown, up to image picker.</p>
-    <img src="./git-img/10-profile.png" style="height:200px; width: 90px; object-fit:cover" />
+    <img src="./git-img/10-profile.png" style="height:200px; width: 115px; object-fit:cover" />
   </li>
 </ul>
